@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" href="#">
+
+	<!--Vue.js CDN-->
+	<script src="https://unpkg.com/vue@next"></script>
+
+	<!--Styles-->
+	<link rel="stylesheet" href="main.css">
+
+	<title>Anime list</title>
+</head>
+<body>
+	
+	<div id="app">
+
+		<header>
+			<div class="container flex">
+				<h1>Anime List</h1>
+
+				<form class="animeForm" v-on:submit.prevent="addAnime">
+					<input type="text" placeholder="Name..." v-model="animeName">
+					<input type="text" placeholder="Picture url..." v-model="animeURL">
+					<button>➕</button>
+				</form>
+			</div>
+		</header>
+
+		<br />
+	
+		<div class="container">
+
+			<span class="category"><h2 v-on:click="toggleAllShown" class="clickable noselect">All <span v-if="animeCount > 0"> - {{ animeCount }}</span> <span v-else> - 0</span></h2></span>
+			<ul class="animeList grid" v-show="allShown">
+				
+				<blockquote v-show="animeCount === 0"> <br /> Empty...</blockquote>
+				
+				<li v-for="(anime, index) in animes" v-bind:key="anime.name" v-bind:class="{fav: anime.isFav}" class="hoverable animeItem" v-bind:key="anime.id">
+					<img v-bind:src="anime.image" v-bind:alt="anime.name" class="icon">
+					<h3>{{ anime.title }}</h3>
+					
+					<div v-on:click="toggleFav(anime)" class="clickable noselect liked">
+						<p v-show="anime.isFav" style="font-size: 25px">★</p>
+						<p v-show="!anime.isFav" style="font-size: 25px">☆</p>
+					</div>
+
+					<br />
+
+					<p class="clickable delete" v-on:click="deleteAnime(index)">Remove</p>
+				</li>
+			</ul>
+
+			<br />
+
+			<span class="category"><h2 v-on:click="toggleFavsShown" class="clickable noselect">Favs <span v-if="favCount > 0"> - {{ favCount }}</span> <span v-else> - 0</span></h2></span>
+			<ul class="animeList grid" v-show="favsShown">
+				
+				<blockquote v-show="favCount === 0"> <br /> Empty...</blockquote>
+				
+				<li v-for="(anime, index) in favoriteAnimes" v-bind:key="anime.name" v-bind:class="{fav: anime.isFav}" class="hoverable animeItem" v-bind:key="anime.id">
+					<img v-bind:src="anime.image" v-bind:alt="anime.name" class="icon">
+					<h3>{{ anime.title }}</h3>
+					
+					<div v-on:click="toggleFav(anime)" class="clickable noselect liked">
+						<p v-show="anime.isFav" style="font-size: 25px">★</p>
+						<p v-show="!anime.isFav" style="font-size: 25px">☆</p>
+					</div>
+
+					<br />
+
+					<p class="clickable delete" v-on:click="deleteAnime(index)">Remove</p>
+				</li>
+			</ul>
+
+		</div>
+
+	</div>
+
+	<script src="app.js"></script>
+
+</body>
+</html>
