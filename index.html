@@ -35,6 +35,7 @@
 	
 		<div class="container">
 
+			<!--List of all anime-->
 			<span class="category"><h2 v-on:click="toggleAllShown" class="clickable noselect">All <span v-if="animeCount > 0"> - {{ animeCount }}</span> <span v-else> - 0</span></h2></span>
 			<ul class="animeList grid" v-show="allShown">
 				
@@ -51,12 +52,13 @@
 
 					<br />
 
-					<p class="clickable delete" v-on:click="deleteAnime(index)">Remove</p>
+					<p class="clickable delete" v-on:click="deleteAnime(anime.index)">Remove</p>
 				</li>
 			</ul>
 
 			<br />
 
+			<!--List of favorites-->
 			<span class="category"><h2 v-on:click="toggleFavsShown" class="clickable noselect">Favs <span v-if="favCount > 0"> - {{ favCount }}</span> <span v-else> - 0</span></h2></span>
 			<ul class="animeList grid" v-show="favsShown">
 				
@@ -73,13 +75,13 @@
 
 					<br />
 
-					<p class="clickable delete" v-on:click="deleteAnime(index)">Remove</p>
+					<p class="clickable delete" v-on:click="deleteAnime(anime.index)">Remove</p>
 				</li>
 			</ul>
 
-		</div>
+			<br />
 
-		<br />
+		</div>
 
 	</div>
 
