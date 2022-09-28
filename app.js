@@ -7,8 +7,7 @@ const app = Vue.createApp({
                 { id: 2, title: "One Piece", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVWcYD_1oq1Q9itvYBMW0-3DFqpA8dhXrM4ByuAxtC0xzFokr4eUAa2E8pXrYpUTj5p_I&usqp=CAU", isFav: false },
                 { id: 3, title: "My Hero", image: "https://i1.sndcdn.com/avatars-000410733648-9kv78w-t500x500.jpg", isFav: false },
                 { id: 4, title: "Dragon Ball Z", image: "https://pbs.twimg.com/profile_images/1366466342354751491/JyhZpbtu_400x400.jpg" },
-                { id: 5, title: "CODE GEASS", image: "https://i1.sndcdn.com/avatars-000151838815-1kli9j-t500x500.jpg" },
-                { id: 6, title: "MELEE", image: "https://commondatastorage.googleapis.com/images.pricecharting.com/AMIfv94OrwfVaIwl-NvTFTeRhzeNT5M2ZMjj9gwBwXBcmT5kntbY0sdQZrq0mv3nYE2WoBeUQc511bnQNS11D7-iEydu33azzeK5Rm7MPeIjRpkpBUXuTXDOz4vruA2D8ddAK_B9PmTNttt5pakDvyDgaj7ymtAxIQ/240.jpg"}
+                { id: 5, title: "CODE GEASS", image: "https://i1.sndcdn.com/avatars-000151838815-1kli9j-t500x500.jpg" }
             ],
             animeName: "",
             animeURL: "",

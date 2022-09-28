@@ -11,9 +11,10 @@
 	<script src="https://unpkg.com/vue@next"></script>
 
 	<!--Styles-->
-	<link rel="stylesheet" href="main.css">
+	<!-- <link rel="stylesheet" href="main.css"> -->
+	<link rel="stylesheet" href="generic.css">
 
-	<title>Anime list</title>
+	<title>Favorites list</title>
 </head>
 <body>
 	
@@ -21,7 +22,7 @@
 
 		<header>
 			<div class="container flex">
-				<h1>Anime List</h1>
+				<h1>Favorites List</h1>
 
 				<form class="animeForm" v-on:submit.prevent="addAnime">
 					<input type="text" placeholder="Name..." v-model="animeName">
@@ -35,7 +36,7 @@
 	
 		<div class="container">
 
-			<!--List of all anime-->
+			<!--List of all items-->
 			<span class="category"><h2 v-on:click="toggleAllShown" class="clickable noselect">All <span v-if="animeCount > 0"> - {{ animeCount }}</span> <span v-else> - 0</span></h2></span>
 			<ul class="animeList grid" v-show="allShown">
 				

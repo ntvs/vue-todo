@@ -1,4 +1,4 @@
-# "Anime list" / TODO test app
+# "Anime/Favorites list" / TODO test app
 ## Implemented using Vue.js 3
 
 **Features:**
@@ -11,7 +11,7 @@
 **Problems:**
 1. No form sanitation
 2. Import { ref } from vue VS. direct editing with v-model
-3. Categories hard 
+3. Categories hard coded
 
 **Resolved**
 1. Deleting anime through favorites array does not delete the corresponding anime in the anime array
